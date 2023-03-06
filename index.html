@@ -1,85 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+  <header class="container d-flex justify-content-between align-items-center my-3">
+    <img src="images/logo.svg" alt="icon-logo" class="col-md-2 me-3">
+    <section class="navbar justify-content-end col-md-10">
+      <button class="navbar-toggler collapsed d-md-none" id="navbar-icon" data-bs-target="#navbarHeader" aria-label="Toggle navigation" aria-controls="navbarHeader" aria-expanded="false" type="button" data-bs-toggle="collapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-none d-md-flex flex-column flex-md-row position-static text-center p-4 mx-3 rounded" id="nav-container">
+        <ul class="nav me-auto">
+          <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Resources</a></li>
+        </ul>
+        <hr class="d-block d-md-none text-white my-3">
+        <div class="justify-content-center">
+          <button type="button" class="btn btn-white bg-transparent rounded-pill mb-2 mb-sm-0">Login</button>
+          <button type="button" class="btn btn-cyan rounded-pill">Sign Up</button>
+        </div>
+      </div>
+    </section>
+  </header>
 
-  Features
-  Pricing
-  Resources
+  <main>
+    <section class="container">
+      <section class="row flex-column-reverse text-center text-sm-start align-items-sm-start align-items-center flex-sm-row mt-5">
+        <article class="col-sm-6 col-10 py-4">
+          <h1 class="display-5 fw-bold">More than just shorter links</h1>
+          <p class="fs-7 mb-4">Build your brand’s recognition and get detailed insights on how your links are performing.</p>
+          <button type="button" class="btn btn-cyan rounded-pill px-3 py-2">Get Started</button>
+        </article>
 
-  Login
-  Sign Up
+        <article class="col-sm-6 col-10">
+          <img src="images/illustration-working.svg" alt="illustration-working" loading="lazy" class="d-block img-fluid img-center">
+        </article>
+      </section>
 
-  More than just shorter links
+      <section class="position-relative section-shorten p-4 col-12 rounded">
+        <form class="d-flex flex-column flex-sm-row justify-content-center w-100" id="form-control" novalidate>
+          <input type="url" id="input-url" placeholder="Shorten a link here..." class="rounded p-2 me-0 me-sm-3 mb-3 mb-sm-0" required>
+          <button class="btn btn-cyan rounded">Shorten It!</button>
+        </form>
+        <span class="error d-block text-danger mt-1 ps-2 fs-7"></span>
+      </section>
 
-  Build your brand’s recognition and get detailed insights 
-  on how your links are performing.
+      
+    </section>
 
-  Get Started
-  
-  Shorten a link here...
+    <section class="text-center second-section py-5">
+      <section class="container py-2">
+        <div class="list-group">
+          <!-- <article class="list-group-item d-flex flex-column flex-md-row justify-content-between align-items-start py-2 my-1" id="card-history">
+            <p class="p-1 m-1">https://wwww.f.com/fr</p>
+            <div class="d-flex align-items-start justify-content-end border-top borde-md-none flex-column flex-md-row w-100">
+              <a href="#" class="text-cyan text-decoration-none p-1 m-1 me-3">https://re.lin/asda</a>
+              <button class="btn btn-cyan text-light w-100" id="copy-button">Copy</button>
+            </div>
+          </article> -->
+        </div>
+      </section>
 
-  Shorten It!
+      <section class="container py-5">
+        <h1 class="fw-bold">Advanced Statistics</h1>
+        <p class="fs-7 col-12 col-sm-6 mx-auto">Track how your links are performing across the web with our advanced statistics dashboard.</p>
+      </section>
 
-  Advanced Statistics
+      <section class="container px-3 pb-4 mb-5 text-start container-card">
+        <hr class="border d-none d-sm-block border-5 opacity-75">
+        <div class="position-absolute d-block d-sm-none"></div>
+        <section class="row flex-column flex-sm-row justify-content-between text-center text-sm-start gy-5 gy-sm-0">
+          <article class="card col me-3">
+            <div class="card-body mt-5">
+              <div class="position-absolute d-flex justify-content-center align-items-center rounded-circle circle-icon">
+                <img src="images/icon-brand-recognition.svg" alt="icon-brand-recognition">
+              </div>
+              <h5 class="card-title h5 fw-bold mb-3">Brand Recognition</h5>
+              <p class="card-text fs-7">Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</p>
+            </div>
+          </article>
+          <article class="card col me-3">
+            <div class="card-body mt-5">
+              <div class="position-absolute d-flex justify-content-center align-items-center rounded-circle circle-icon">
+                <img src="images/icon-detailed-records.svg" alt="icon-detailed-records">
+              </div>
+              <h5 class="card-title h5 fw-bold mb-3">Detailed Records</h5>
+              <p class="card-text fs-7">Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
+            </div>
+          </article>
+          <article class="card col">
+            <div class="card-body mt-5">
+              <div class="position-absolute d-flex justify-content-center align-items-center rounded-circle circle-icon">
+                <img src="images/icon-fully-customizable.svg" alt="icon-fully-customizable">
+              </div>
+              <h5 class="card-title h5 fw-bold mb-3">Fully Customizable</h5>
+              <p class="card-text fs-7">Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</p>
+            </div>
+          </article>
+        </section>
 
-  Track how your links are performing across the web with our 
-  advanced statistics dashboard.
+      </section>
+    </section>
 
-  Brand Recognition
+    <section class="section-boost p-5">
+      <div class="container text-center">
+        <h1 class="fw-bold mb-4 text-light">Boost your links today</h1>
+        <button class="btn btn-cyan rounded-pill px-4 py-2">Get Started</button>
+      </div>
+    </section>
+  </main>
 
-  Boost your brand recognition with each click. Generic links don’t 
-  mean a thing. Branded links help instil confidence in your content.
+  <footer>
+    <section class="container pt-5 pb-2">
+      <div class="row flex-wrap flex-column flex-md-row text-center text-md-start">
+        <article class="col mb-5">
+            <a href="#" class="h2 fw-bold text-light text-decoration-none">Shortly</a>
+        </article>
+        <article class="col"></article>
+        <article class="col mb-4">
+          <h5 class="text-light">Features</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link text-decoration-none fs-7 px-0">Link Shortening</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-decoration-none fs-7 px-0">Branded Links</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-decoration-none fs-7 px-0">Analytics</a></li>
+          </ul>
+        </article>
+        <article class="col mb-4">
+          <h5 class="text-light">Resources</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link text-decoration-none fs-7 px-0">Blog</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-decoration-none fs-7 px-0">Developers</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-decoration-none fs-7 px-0">Support</a></li>
+          </ul>
+        </article>
+        <article class="col mb-4">
+          <h5 class="text-light">Company</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link text-decoration-none fs-7 px-0">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-decoration-none fs-7 px-0">Our Team</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-decoration-none fs-7 px-0">Careers</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-decoration-none fs-7 px-0">Contact</a></li>
+          </ul>
+        </article>
+        <article class="col">
+          <ul class="d-flex list-unstyled justify-content-center">
+            <li><a href="#"><img src="images/icon-facebook.svg" alt="icon-facebook" class="ms-3"></a></li>
+            <li><a href="#"><img src="images/icon-twitter.svg" alt="icon-twitter.svg" class="ms-3"></a></li>
+            <li><a href="#"><img src="images/icon-pinterest.svg" alt="icon-pinterest.svg" class="ms-3"></a></li>
+            <li><a href="#"><img src="images/icon-instagram.svg" alt="icon-instagram.svg" class="ms-3"></a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </footer>
 
-  Detailed Records
-
-  Gain insights into who is clicking your links. Knowing when and where 
-  people engage with your content helps inform better decisions.
-
-  Fully Customizable
-
-  Improve brand awareness and content discoverability through customizable 
-  links, supercharging audience engagement.
-
-  Boost your links today
-
-  Get Started
-
-  Features
-
-  Link Shortening
-  Branded Links
-  Analytics
-
-  Resources
-
-  Blog
-  Developers
-  Support
-
-  Company
-
-  About
-  Our Team
-  Careers
-  Contact
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <script src="js/nodes.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
